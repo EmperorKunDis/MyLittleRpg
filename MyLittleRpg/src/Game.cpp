@@ -3,39 +3,17 @@
 
 Game::Game() {
     // Constructor implementation
-
-    int randomEnemy() % 4+1;
-
-    enum EnemyType
-    {
-        Skeleton,
-        Goblin,
-        Ogre,
-        Werewolf,
-        Troll,
-        Orc,
-        Vampire,
-        Dragon
-    };
-
-
 }
-
 void Game::start() {
     // Start implementation
 }
-
 void Game::update() {
+    randNum() % 10 + 1; 
     // Update implementation
-
-    
-
 }
-
 void Game::render() {
     // Render implementation
 }
-
 void Game::end() {
     // End implementation
 }

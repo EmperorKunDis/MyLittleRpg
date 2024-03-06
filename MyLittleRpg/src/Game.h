@@ -5,6 +5,8 @@ class Game {
 public:
     Game();
     void start();
-    void update()
+    void update();
+    void render();
     void end();
+    int randNum();
 };
