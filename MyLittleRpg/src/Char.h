@@ -58,8 +58,8 @@
         const std::vector<std::wstring>& GetEquipSlotLabel() const { return m_EquipSlotLabel; };
         const std::vector<std::wstring>& GetStatsLabel() const { return m_StatsLabel; };
 
-        std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>>& GetEquipment = () => { return m_Equip; };
-        Stats& GetStats = () => { return m_Stats; };
+        std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>>& GetEquipment () { return m_Equip; };
+        Stats& GetStats() { return m_Stats; };
         
         inline const std::wstring& GetName() const { return m_sName; };
         inline const std::wstring& GetIdentity() const { return m_sIdentity; };

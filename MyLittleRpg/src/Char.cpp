@@ -2,30 +2,30 @@
 
 Char::Char()
 
-    : Char(L"m_sName", L"m_sIdentity", 0, 100, ClassType::Necromancer)
+    : Char(L"m_sName", L"m_sIdentity", 0, 50, ClassType::Necromancer)
 {
 
 }
 
 Char::Char(     std::wstring name, std::wstring identity, int level,int currentXP, int XPToNextLevel, int currentHP, int maxHP,
                 int currentMP, int maxMP, int currentStamina, int maxStamina, int attackPower, int defencePower, int speedPower,
-                int luckyPower, int charismaPower, int magicPower, ClassType type, std::m_mapEquipSlot) 
+                int luckyPower, int charismaPower, int magicPower, ClassType type, std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>> mapEquipSlot, ) 
     :   m_sName{name},  
         m_sIdentity{identity}, 
         m_Level{level}, 
         m_CurrentXP{0},
         m_XPToNextLevel{50},
         m_MaxHP{maxHP},
-        m_MaxMP{0}, 
+        m_MaxMP{maxMP}, 
         m_CurrentMP{0},
         m_currentStamina{0},
-        m_maxStamina{0},
-        m_attackPower{0},
-        m_defencePower{0},
-        m_speedPower{0},
-        m_luckyPower{0},
-        m_charismaPower{0},
-        m_magicPower{0},
+        m_maxStamina{maxStamina},
+        m_attackPower{attackPower},
+        m_defencePower{defencePower},
+        m_speedPower{speedPower},
+        m_luckyPower{luckyPower},
+        m_charismaPower{charismaPower},
+        m_magicPower{magicPower},
         m_bDead{false},
         m_eClassType{type},
         m_mapEquipSlots{
@@ -43,7 +43,7 @@ Char::Char(     std::wstring name, std::wstring identity, int level,int currentX
             { Stats::EquipSlot::FourthRing, nullptr},
             { Stats::EquipSlot::Neck, nullptr},
             { Stats::EquipSlot::Trinket, nullptr}
-        } ,
+        },
         m_mapStats{5, 2, 3, 5, 4, 6, 7}
                            //Just some random numbers to test stats Original is 1, 1, 1, 1, 1, 1, 1, on level 0
 
