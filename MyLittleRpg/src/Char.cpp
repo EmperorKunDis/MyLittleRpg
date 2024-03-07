@@ -2,18 +2,20 @@
 
 Char::Char()
 
-    : Char(L"m_sName", L"Char_Identity", 0, 100, ClassType::Necromancer)
+    : Char(L"m_sName", L"m_sIdentity", 0, 100, ClassType::Necromancer)
 {
 
 }
 
-Char::Char(std::wstring name, std::wstring identity, int level,int currentXP, int XPToNextLevel, int currentHP, int currentMP, int maxMP, int maxHP, ClassType type)
-    {   m_sName{name},  
+Char::Char(     std::wstring name, std::wstring identity, int level,int currentXP, int XPToNextLevel, int currentHP, int maxHP,
+                int currentMP, int maxMP, int currentStamina, int maxStamina, int attackPower, int defencePower, int speedPower,
+                int luckyPower, int charismaPower, int magicPower, ClassType type, std::m_mapEquipSlot) 
+    :   m_sName{name},  
         m_sIdentity{identity}, 
         m_Level{level}, 
         m_CurrentXP{0},
         m_XPToNextLevel{50},
-        m_MaxHP{maxHP},}
+        m_MaxHP{maxHP},
         m_MaxMP{0}, 
         m_CurrentMP{0},
         m_currentStamina{0},
@@ -25,7 +27,7 @@ Char::Char(std::wstring name, std::wstring identity, int level,int currentXP, in
         m_charismaPower{0},
         m_magicPower{0},
         m_bDead{false},
-        m_eCharType{type},
+        m_eClassType{type},
         m_mapEquipSlots{
             { Stats::EquipSlot::Head, nullptr},
             { Stats::EquipSlot::Body, nullptr},
@@ -43,7 +45,7 @@ Char::Char(std::wstring name, std::wstring identity, int level,int currentXP, in
             { Stats::EquipSlot::Trinket, nullptr}
         } ,
         m_mapStats{5, 2, 3, 5, 4, 6, 7}
-    }                       //Just some random numbers to test stats Original is 1, 1, 1, 1, 1, 1, 1, on level 0
+                           //Just some random numbers to test stats Original is 1, 1, 1, 1, 1, 1, 1, on level 0
 
 {
 

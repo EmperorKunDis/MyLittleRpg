@@ -49,40 +49,43 @@
 
     public:
         Char();
-        Char(const std::wstring& name, const std::wstring& identity, int level, int max_hp, ClassType type = ClassType::Necromancer);
+        Char( const std::wstring name,const std::wstring identity, int level,int currentXP, int XPToNextLevel, int currentHP, int maxHP,
+                int currentMP, int maxMP, int currentStamina, int maxStamina, int attackPower, int defencePower, int speedPower,
+                int luckyPower, int charismaPower, int magicPower, ClassType type, const std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>> mapEquipSlot);
 
         ~Char() = default;
 
-        const std::vector<std::wstring>& GetEquipSlotLabel() const { return m_EquipSlotLabel; }
-        const std::vector<std::wstring>& GetStatsLabel() const { return m_StatsLabel; }
+        const std::vector<std::wstring>& GetEquipSlotLabel() const { return m_EquipSlotLabel; };
+        const std::vector<std::wstring>& GetStatsLabel() const { return m_StatsLabel; };
 
-        std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>>& GetEquipment() { return m_Equip; }
-        Stats& GetStats() { return m_Stats; }
+        std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>>& GetEquipment = () => { return m_Equip; };
+        Stats& GetStats = () => { return m_Stats; };
         
-        inline const std::wstring& GetName() const { return m_sName; }
-        inline const std::wstring& GetIdentity() const { return m_sIdentity; }
+        inline const std::wstring& GetName() const { return m_sName; };
+        inline const std::wstring& GetIdentity() const { return m_sIdentity; };
 
-        const int GetLevel() const { return m_Level; }
-        const int GetHP() const { return m_CurrentHP; }
-        const int GetMaxHP() const { return m_MaxHP; }
-        const int GetMP() const { return m_CurrentMP; }
-        const int GetMaxMP() const { return m_MaxMP; }
-        const int GetXP() const { return m_CurrentXP; }
-        const int GetStamina() const { return m_currentStamina; }
-        const int GetMaxStamina() const { return m_maxStamina; }
-        const int GetAttackPower() const { return m_attackPower; }
-        const int GetDefencePower() const { return m_defencePower; }
-        const int GetSpeedPower() const { return m_speedPower; }
-        const int GetStaminaPower() const { return m_staminaPower; }
-        const int GetLuckyPower() const { return m_luckyPower; }
-        const int GetCharismaPower() const { return m_charismaPower; }
-        const int GetMagicPower() const { return m_magicPower; }
-
-
-        const int GetXPToNextLevel() const { return m_XPToNextLevel; }
+        const int GetLevel() const { return m_Level; };
+        const int GetHP() const { return m_CurrentHP; };
+        const int GetMaxHP() const { return m_MaxHP; };
+        const int GetMP() const { return m_CurrentMP; };
+        const int GetMaxMP() const { return m_MaxMP; };
+        const int GetXP() const { return m_CurrentXP; };
+        const int GetStamina() const { return m_currentStamina; };
+        const int GetMaxStamina() const { return m_maxStamina; };
+        const int GetAttackPower() const { return m_attackPower; };
+        const int GetDefencePower() const { return m_defencePower; };
+        const int GetSpeedPower() const { return m_speedPower; };
+        const int GetStaminaPower() const { return m_staminaPower; };
+        const int GetLuckyPower() const { return m_luckyPower; };
+        const int GetCharismaPower() const { return m_charismaPower; };
+        const int GetMagicPower() const { return m_magicPower; };
 
 
-        const bool IsDead() const { return m_bDead; }
+        const int GetXPToNextLevel() const { return m_XPToNextLevel; };
+
+
+        const bool IsDead() const { return m_bDead; };
+
 
         void HealHP(int holyPower);
 
