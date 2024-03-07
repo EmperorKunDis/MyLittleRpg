@@ -9,7 +9,7 @@ Char::Char()
 
 Char::Char(     std::wstring name, std::wstring identity, int level,int currentXP, int XPToNextLevel, int currentHP, int maxHP,
                 int currentMP, int maxMP, int currentStamina, int maxStamina, int attackPower, int defencePower, int speedPower,
-                int luckyPower, int charismaPower, int magicPower, ClassType type, std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>> mapEquipSlot, ) 
+                int luckyPower, int charismaPower, int magicPower, ClassType type, std::unordered_map<Stats::EquipSlot, std::shared_ptr> mapEquipSlot, std::unordered_map<Stats::StatsType, int> mapStats)    
     :   m_sName{name},  
         m_sIdentity{identity}, 
         m_Level{level}, 

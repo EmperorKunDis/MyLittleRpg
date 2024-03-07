@@ -42,7 +42,7 @@
 
 	    ClassType m_eClassType;
 	
-	    std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>> m_mapEquipSlot;
+	    std::unordered_map<Stats::EquipSlot, std::shared_ptr> m_mapEquipSlot;
 
         Stats m_Stats;
 
@@ -51,14 +51,14 @@
         Char();
         Char( const std::wstring name,const std::wstring identity, int level,int currentXP, int XPToNextLevel, int currentHP, int maxHP,
                 int currentMP, int maxMP, int currentStamina, int maxStamina, int attackPower, int defencePower, int speedPower,
-                int luckyPower, int charismaPower, int magicPower, ClassType type, const std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>> mapEquipSlot);
+                int luckyPower, int charismaPower, int magicPower, ClassType type, const std::unordered_map<Stats::EquipSlot, std::shared_ptr> mapEquipSlot);
 
         ~Char() = default;
 
         const std::vector<std::wstring>& GetEquipSlotLabel() const { return m_EquipSlotLabel; };
         const std::vector<std::wstring>& GetStatsLabel() const { return m_StatsLabel; };
 
-        std::unordered_map<Stats::EquipSlot, std::shared_ptr<Equip>>& GetEquipment () { return m_Equip; };
+        std::unordered_map<Stats::EquipSlot, std::shared_ptr>& GetEquip () { return m_Equip; };
         Stats& GetStats() { return m_Stats; };
         
         inline const std::wstring& GetName() const { return m_sName; };
